@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">StockList</string>
+    <string name="stock_list">Stock List</string>
+    <string name="sort">Sort</string>
+    <string name="filter">Filter</string>
+    <string name="current">Current</string>
+    <string name="high">High to Low</string>
+    <string name="change">Absolute Change</string>
+    <string name="low">Low to High</string>
+</resources>
