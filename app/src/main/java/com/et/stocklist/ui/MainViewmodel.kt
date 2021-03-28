@@ -13,20 +13,20 @@ class MainViewmodel(val networkService: NetworkService) : ViewModel() {
 
 
     var publishObject = PublishSubject.create<ArrayList<Searchresult>>()
-    suspend fun getList(): ArrayList<Searchresult>? {
-        return try{
+    private suspend fun getList(): ArrayList<Searchresult>? {
+        return try {
             val data =
                 withContext(viewModelScope.coroutineContext + Dispatchers.IO) {
                     networkService.getList()
                 }
             data.searchresult as ArrayList<Searchresult>
-        } catch (e:Exception){
+        } catch (e: Exception) {
             ArrayList()
         }
     }
 
     fun getStockList() {
-        viewModelScope.launch{
+        viewModelScope.launch {
             val it = getList()
             it?.let {
                 updateData(it)
@@ -34,12 +34,12 @@ class MainViewmodel(val networkService: NetworkService) : ViewModel() {
         }
     }
 
-    fun updateData(it: ArrayList<Searchresult>) {
-        publishObject.onNext(it )
+    private fun updateData(it: ArrayList<Searchresult>) {
+        publishObject.onNext(it)
     }
 
-    fun sortListBy(selectedSort: Sort, response: ArrayList<Searchresult>) :ArrayList<Searchresult>{
-        when(selectedSort){
+    fun sortListBy(selectedSort: Sort, response: ArrayList<Searchresult>): ArrayList<Searchresult> {
+        when (selectedSort) {
             Sort.CURRENT_HIGH -> response.sortByDescending { it.current?.toDouble() }
             Sort.CURRENT_LOW -> response.sortBy { it.current?.toDouble() }
             Sort.CHANGE_HIGH -> response.sortByDescending { it.absolutechange?.toDouble() }
@@ -47,6 +47,5 @@ class MainViewmodel(val networkService: NetworkService) : ViewModel() {
         }
         return response
     }
-
 
 }

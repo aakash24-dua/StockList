@@ -13,36 +13,27 @@ import java.util.*
 import kotlin.collections.ArrayList
 
 class ContentListAdapter(private val data: ArrayList<Searchresult>) :
-    RecyclerView.Adapter<RecyclerView.ViewHolder>(),Filterable {
-
-   // var searchData = ArrayList<Searchresult>()
+    RecyclerView.Adapter<RecyclerView.ViewHolder>(), Filterable {
     var searchData: MutableList<Searchresult> = mutableListOf()
-
     init {
         searchData = data
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
-
         val view = LayoutInflater.from(parent.context).inflate(R.layout.card_view, parent, false)
-
         return ContentItemViewHolder(
             view
         )
-
     }
 
     override fun getItemCount(): Int {
         return searchData.size
     }
 
-    @RequiresApi(Build.VERSION_CODES.O)
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         if (holder is ContentItemViewHolder) {
             (holder).bind(searchData[position])
-
         }
-
     }
 
     override fun getFilter(): Filter {
@@ -64,7 +55,6 @@ class ContentListAdapter(private val data: ArrayList<Searchresult>) :
                 filterResults.values = searchData
                 return filterResults
             }
-
             @Suppress("UNCHECKED_CAST")
             override fun publishResults(constraint: CharSequence?, results: FilterResults?) {
                 searchData = results?.values as MutableList<Searchresult>

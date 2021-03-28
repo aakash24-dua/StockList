@@ -42,7 +42,6 @@ class MainActivity : AppCompatActivity(),
         viewmodel.publishObject.subscribe {
             progress_bar.gone()
             response = it
-            //setAdapter(response)
             setSortOption(selectedSort)
 
         }

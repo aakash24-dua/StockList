@@ -13,6 +13,20 @@
         <item name="windowNoTitle">true</item>
     </style>
 
+    <style name="TextViewStyleBottomDialog" parent="Widget.AppCompat.TextView">
+        <item name="android:textSize">@dimen/_16ssp</item>
+        <item name="android:layout_margin">@dimen/_8sdp</item>
+        <item name="android:textColor">@color/black</item>
+
+    </style>
+
+    <style name="TextViewStyleHeading" parent="Widget.AppCompat.TextView">
+        <item name="android:textSize">@dimen/_12ssp</item>
+        <item name="android:gravity">start</item>
+        <item name="android:textColor">@color/black</item>
+
+    </style>
+
 
 
 
@@ -21,13 +35,5 @@
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
-    <style name="HeaderTextAboveCardviews">
-        <item name="android:textColor">@color/results_header_text</item>
-        <item name="android:textSize">14sp</item>
-        <item name="android:layout_marginBottom">11dp</item>
-        <item name="android:layout_marginLeft">16dp</item>
-        <item name="android:layout_marginRight">16dp</item>
-        <item name="android:layout_marginTop">11dp</item>
-    </style>
 
 </resources>

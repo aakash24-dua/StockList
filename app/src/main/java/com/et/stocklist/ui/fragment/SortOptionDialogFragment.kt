@@ -17,10 +17,8 @@ class SortOptionDialogFragment : BottomSheetDialogFragment() {
     lateinit var selectedItem: String
 
     fun newInstance(option: Sort): SortOptionDialogFragment {
-
         val args = Bundle()
         args.putString("selectedSort", option.name)
-
         val fragment = SortOptionDialogFragment()
         fragment.arguments = args
         return fragment

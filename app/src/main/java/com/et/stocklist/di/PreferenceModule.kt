@@ -15,7 +15,6 @@ import org.koin.dsl.module
         viewModel {
             MainViewmodel(get())
         }
-
     }
 
     private const val PREFERENCES_FILE_KEY = "com.example.settings_preferences"

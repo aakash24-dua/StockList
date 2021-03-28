@@ -9,11 +9,9 @@
         android:id="@+id/current_rate_high_txt_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/_8sdp"
+        style="@style/TextViewStyleBottomDialog"
         app:layout_constraintTop_toTopOf="parent"
         android:text="@string/current"
-        android:textSize="@dimen/_16ssp"
-        android:textColor="@color/black"
         app:layout_constraintLeft_toLeftOf="parent" />
 
     <TextView
@@ -21,10 +19,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_margin="@dimen/_8sdp"
+        style="@style/TextViewStyleBottomDialog"
         android:text="@string/high"
-        android:textSize="@dimen/_16ssp"
-        android:textColor="@color/black"
         app:layout_constraintRight_toRightOf="parent"
         app:drawableEndCompat="@drawable/ic_up_arrow" />
 
@@ -35,8 +31,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_margin="@dimen/_8sdp"
-        android:textSize="@dimen/_16ssp"
-        android:textColor="@color/black"
         app:layout_constraintTop_toBottomOf="@id/current_rate_high_sort_option_view"
         android:layout_height="1dp"/>
 
@@ -44,11 +38,9 @@
         android:id="@+id/current_rate_low_txt_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/_8sdp"
+        style="@style/TextViewStyleBottomDialog"
         app:layout_constraintTop_toBottomOf="@id/view_1"
         android:text="@string/current"
-        android:textSize="@dimen/_16ssp"
-        android:textColor="@color/black"
         app:layout_constraintLeft_toLeftOf="parent" />
 
     <TextView
@@ -56,10 +48,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@id/view_1"
-        android:layout_margin="@dimen/_8sdp"
+        style="@style/TextViewStyleBottomDialog"
         android:text="@string/low"
-        android:textSize="@dimen/_16ssp"
-        android:textColor="@color/black"
         app:layout_constraintRight_toRightOf="parent"
         app:drawableEndCompat="@drawable/ic_down_arrow" />
 
@@ -70,8 +60,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_margin="@dimen/_8sdp"
-        android:textSize="@dimen/_16ssp"
-        android:textColor="@color/black"
         app:layout_constraintTop_toBottomOf="@id/current_rate_low_sort_option_view"
         android:layout_height="1dp"/>
 
@@ -81,9 +69,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@id/view_2"
-        android:layout_margin="@dimen/_8sdp"
-        android:textSize="@dimen/_16ssp"
-        android:textColor="@color/black"
+        style="@style/TextViewStyleBottomDialog"
         android:text="@string/change"
         app:layout_constraintLeft_toLeftOf="parent" />
 
@@ -92,10 +78,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@id/view_2"
-        android:layout_margin="@dimen/_8sdp"
+        style="@style/TextViewStyleBottomDialog"
         android:text="@string/high"
-        android:textSize="@dimen/_16ssp"
-        android:textColor="@color/black"
         app:layout_constraintRight_toRightOf="parent"
         app:drawableEndCompat="@drawable/ic_up_arrow" />
 
@@ -106,8 +90,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_margin="@dimen/_8sdp"
-        android:textSize="@dimen/_16ssp"
-        android:textColor="@color/black"
         app:layout_constraintTop_toBottomOf="@id/absolute_change_high_sort_option_view"
         android:layout_height="1dp"/>
 
@@ -116,9 +98,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@id/view_3"
-        android:layout_margin="@dimen/_8sdp"
-        android:textSize="@dimen/_16ssp"
-        android:textColor="@color/black"
+        style="@style/TextViewStyleBottomDialog"
         android:text="@string/change"
         app:layout_constraintLeft_toLeftOf="parent" />
 
@@ -127,10 +107,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@id/view_3"
-        android:layout_margin="@dimen/_8sdp"
         android:text="@string/low"
-        android:textSize="@dimen/_16ssp"
-        android:textColor="@color/black"
+        style="@style/TextViewStyleBottomDialog"
         app:layout_constraintRight_toRightOf="parent"
         app:drawableEndCompat="@drawable/ic_down_arrow" />
 
