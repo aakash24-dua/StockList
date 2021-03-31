@@ -1,5 +1,6 @@
 package com.et.stocklist.ui.fragment
 
+import android.app.Dialog
 import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -15,7 +16,10 @@ import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 class SortOptionDialogFragment : BottomSheetDialogFragment() {
 
     lateinit var selectedItem: String
+    override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
+        return super.onCreateDialog(savedInstanceState)
 
+    }
     fun newInstance(option: Sort): SortOptionDialogFragment {
         val args = Bundle()
         args.putString("selectedSort", option.name)
@@ -26,7 +30,8 @@ class SortOptionDialogFragment : BottomSheetDialogFragment() {
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
-        selectedItem = arguments?.getString("selectedSort").toString()
+        selectedItem = tag!!
+        //selectedItem = arguments?.getString("selectedSort").toString()
     }
 
     override fun onCreateView(
@@ -34,6 +39,7 @@ class SortOptionDialogFragment : BottomSheetDialogFragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        val s = tag
         return inflater.inflate(
             R.layout.sort_dialog, container,
             false

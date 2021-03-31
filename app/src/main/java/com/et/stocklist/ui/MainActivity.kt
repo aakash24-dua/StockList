@@ -20,6 +20,9 @@ class MainActivity : AppCompatActivity(),
     lateinit var recyclerViewAdapter: ContentListAdapter
     private var response: ArrayList<Searchresult> = ArrayList()
     private var selectedSort = Sort.CURRENT_HIGH
+    private val dialog by lazy {
+        SortOptionDialogFragment().newInstance(selectedSort)
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,15 +34,15 @@ class MainActivity : AppCompatActivity(),
         viewmodel.getStockList()
 
         sort.setOnClickListener {
-            val dialog = SortOptionDialogFragment().newInstance(selectedSort)
-            dialog.show(supportFragmentManager, "DIALOG")
+           // val dialog = SortOptionDialogFragment().newInstance(selectedSort)
+            dialog.show(supportFragmentManager, selectedSort.name)
         }
         filter.setOnClickListener {
             searchView.requestFocus()
             searchView.isIconified = false
         }
 
-        viewmodel.publishObject.subscribe {
+       val disposable =  viewmodel.publishObject.subscribe {
             progress_bar.gone()
             response = it
             setSortOption(selectedSort)
@@ -47,6 +50,7 @@ class MainActivity : AppCompatActivity(),
         }
 
     }
+    
 
     private lateinit var searchView : SearchView
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {

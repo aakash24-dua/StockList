@@ -48,4 +48,8 @@ class MainViewmodel(val networkService: NetworkService) : ViewModel() {
         return response
     }
 
+    override fun onCleared() {
+        super.onCleared()
+    }
+
 }

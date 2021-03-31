@@ -1,6 +1,7 @@
 package com.et.stocklist.utils
 
 
+import com.et.stocklist.BuildConfig
 import com.et.stocklist.data.Constants
 import com.google.gson.GsonBuilder
 import okhttp3.OkHttpClient
@@ -22,14 +23,12 @@ class NetworkService {
             .writeTimeout(60, TimeUnit.SECONDS)
             .addInterceptor(interceptor)
             .build()
-
         val gson = GsonBuilder()
             .setLenient()
             .create()
         interceptor.setLevel(HttpLoggingInterceptor.Level.BODY)
         val retrofit = Retrofit.Builder()
-            .baseUrl(Constants.baseURL)
-        .addConverterFactory(ScalarsConverterFactory.create())
+            .baseUrl(BuildConfig.BASE_URL)
         .addConverterFactory(GsonConverterFactory.create(gson))
             .client(okHttpClient)
             .build()
